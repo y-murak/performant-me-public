@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>パフォーマンスが悪いサイト</title>
+    <title>パフォーマンスが良いサイト</title>
     <link rel="stylesheet" href="assets/css/bloated.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -170,7 +170,7 @@
             <div class="hero-background"
                 style="background-image: url('assets/images/hero-bg-optimized.webp'); background-size: cover; height: 100vh; will-change: transform;">
                 <div class="hero-content">
-                    <h1 class="hero-title">Welcome to Our Slow Website</h1>
+                    <h1 class="hero-title">Welcome to Our Optimized Website</h1>
                     <p class="hero-subtitle">This site is intentionally slow for educational purposes</p>
                     <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                         alt="Inline image" style="width: 50px; height: 50px;">
@@ -181,10 +181,10 @@
         <section class="gallery">
             <h2>Image Gallery</h2>
             <div class="gallery-grid">
-                <img src="assets/images/gallery-1-optimized.webp" alt="Gallery Image 1" loading="eager">
-                <img src="assets/images/gallery-2-optimized.webp" alt="Gallery Image 2" loading="eager">
-                <img src="assets/images/gallery-3-optimized.webp" alt="Gallery Image 3" loading="eager">
-                <img src="assets/images/gallery-4-optimized.webp" alt="Gallery Image 4" loading="eager">
+                <img src="assets/images/gallery-1-optimized.webp" alt="Gallery Image 1" fetchpriority="high" width="800" height="600">
+                <img src="assets/images/gallery-2-optimized.webp" alt="Gallery Image 2" loading="lazy" width="800" height="600">
+                <img src="assets/images/gallery-3-optimized.webp" alt="Gallery Image 3" loading="lazy" width="800" height="600">
+                <img src="assets/images/gallery-4-optimized.webp" alt="Gallery Image 4" loading="lazy" width="800" height="600">
             </div>
         </section>
 
@@ -201,7 +201,7 @@
             <h2>Embedded Map</h2>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.828!2d139.6917!3d35.6895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQxJzIyLjIiTiAxMznCsDQxJzMwLjEiRQ!5e0!3m2!1sen!2sjp!4v1234567890"
-                width="100%" height="450" frameborder="0" allowfullscreen="" loading="eager"></iframe>
+                width="100%" height="450" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
         </section>
     </main>
 
