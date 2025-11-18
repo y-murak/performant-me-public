@@ -210,16 +210,17 @@ function sleep(ms) {
 // }
 
 // Global variables creating memory pressure
-window.globalData = {
-    largeArray: Array.from({length: 100000}, (_, i) => ({
-        id: i,
-        data: `Large string data item ${i} with lots of content to consume memory`,
-        moreData: Array.from({length: 100}, () => Math.random())
-    })),
-    images: [],
-    timers: [],
-    callbacks: []
-};
+// Commented out to reduce main thread blocking time
+// window.globalData = {
+//     largeArray: Array.from({length: 100000}, (_, i) => ({
+//         id: i,
+//         data: `Large string data item ${i} with lots of content to consume memory`,
+//         moreData: Array.from({length: 100}, () => Math.random())
+//     })),
+//     images: [],
+//     timers: [],
+//     callbacks: []
+// };
 
 // Initialize all the bad practices when DOM loads
 if (document.readyState === 'loading') {
