@@ -46,73 +46,73 @@ function sleep(ms) {
 // }
 
 // Inefficient animation without requestAnimationFrame
-let animationCounter = 0;
-function badAnimation() {
-    setInterval(() => {
-        animationCounter++;
-        const elements = document.querySelectorAll('.moving-box, .rotating-element, .scaling-element');
-        elements.forEach((el, index) => {
-            // Directly manipulating style properties that trigger layout
-            el.style.left = (animationCounter + index * 10) % 300 + 'px';
-            el.style.width = (50 + Math.sin(animationCounter * 0.1) * 20) + 'px';
-            el.style.height = (50 + Math.cos(animationCounter * 0.1) * 20) + 'px';
-            
-            // Force reflow
-            el.offsetHeight;
-        });
-    }, 16); // Not synced with display refresh rate
-}
+// let animationCounter = 0;
+// function badAnimation() {
+//     setInterval(() => {
+//         animationCounter++;
+//         const elements = document.querySelectorAll('.moving-box, .rotating-element, .scaling-element');
+//         elements.forEach((el, index) => {
+//             // Directly manipulating style properties that trigger layout
+//             el.style.left = (animationCounter + index * 10) % 300 + 'px';
+//             el.style.width = (50 + Math.sin(animationCounter * 0.1) * 20) + 'px';
+//             el.style.height = (50 + Math.cos(animationCounter * 0.1) * 20) + 'px';
+//
+//             // Force reflow
+//             el.offsetHeight;
+//         });
+//     }, 16); // Not synced with display refresh rate
+// }
 
 // Memory leak - event listeners not cleaned up
-function setupMemoryLeaks() {
-    console.log('Setting up memory leaks');
-    
-    setInterval(() => {
-        const handler = function() {
-            console.log('Memory leak handler executed');
-        };
-        
-        // Add event listeners without removing them
-        document.addEventListener('click', handler);
-        document.addEventListener('scroll', handler);
-        document.addEventListener('resize', handler);
-        
-        // Create closures that reference DOM elements
-        const elements = document.querySelectorAll('*');
-        const closure = function() {
-            return elements.length;
-        };
-        
-        // Store closure in a global array (prevents garbage collection)
-        window.memoryLeaks = window.memoryLeaks || [];
-        window.memoryLeaks.push(closure);
-    }, 1000);
-}
+// function setupMemoryLeaks() {
+//     console.log('Setting up memory leaks');
+//
+//     setInterval(() => {
+//         const handler = function() {
+//             console.log('Memory leak handler executed');
+//         };
+//
+//         // Add event listeners without removing them
+//         document.addEventListener('click', handler);
+//         document.addEventListener('scroll', handler);
+//         document.addEventListener('resize', handler);
+//
+//         // Create closures that reference DOM elements
+//         const elements = document.querySelectorAll('*');
+//         const closure = function() {
+//             return elements.length;
+//         };
+//
+//         // Store closure in a global array (prevents garbage collection)
+//         window.memoryLeaks = window.memoryLeaks || [];
+//         window.memoryLeaks.push(closure);
+//     }, 1000);
+// }
 
 // Inefficient regex operations
-function inefficientRegex() {
-    console.log('Running inefficient regex operations');
-    
-    const text = 'This is a sample text with email@example.com and another@test.org and more@sample.net';
-    
-    // Catastrophic backtracking regex
-    const badRegex = /^(a+)+$/;
-    const testString = 'a'.repeat(20) + 'x';
-    
-    try {
-        for (let i = 0; i < 100; i++) {
-            badRegex.test(testString);
-        }
-    } catch (e) {
-        console.log('Regex timeout/error:', e.message);
-    }
-    
-    // Inefficient email validation repeated many times
-    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-    for (let i = 0; i < 1000; i++) {
-        emailRegex.test('test@example.com');
-    }
-}
+// function inefficientRegex() {
+//     console.log('Running inefficient regex operations');
+//
+//     const text = 'This is a sample text with email@example.com and another@test.org and more@sample.net';
+//
+//     // Catastrophic backtracking regex
+//     const badRegex = /^(a+)+$/;
+//     const testString = 'a'.repeat(20) + 'x';
+//
+//     try {
+//         for (let i = 0; i < 100; i++) {
+//             badRegex.test(testString);
+//         }
+//     } catch (e) {
+//         console.log('Regex timeout/error:', e.message);
+//     }
+//
+//     // Inefficient email validation repeated many times
+//     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+//     for (let i = 0; i < 1000; i++) {
+//         emailRegex.test('test@example.com');
+//     }
+// }
 
 // Synchronous AJAX requests
 // function synchronousRequests() {
@@ -226,9 +226,9 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM loaded, starting all bad practices');
         // inefficientDOMManipulation();
-        badAnimation();
-        setupMemoryLeaks();
-        inefficientRegex();
+        // badAnimation();
+        // setupMemoryLeaks();
+        // inefficientRegex();
         // synchronousRequests();
         // inefficientDataProcessing();
         // heavyCalculations();
@@ -236,9 +236,9 @@ if (document.readyState === 'loading') {
 } else {
     console.log('DOM already loaded, starting all bad practices');
     // inefficientDOMManipulation();
-    badAnimation();
-    setupMemoryLeaks();
-    inefficientRegex();
+    // badAnimation();
+    // setupMemoryLeaks();
+    // inefficientRegex();
     // synchronousRequests();
     // inefficientDataProcessing();
     // heavyCalculations();

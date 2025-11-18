@@ -271,15 +271,15 @@
         //     }
         // }, 16);
 
-        document.addEventListener('scroll', function () {
-            document.querySelectorAll('.gallery img').forEach(img => {
-                const rect = img.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    img.style.opacity = '1';
-                    img.style.transform = 'scale(1)';
-                }
-            });
-        });
+        // document.addEventListener('scroll', function () {
+        //     document.querySelectorAll('.gallery img').forEach(img => {
+        //         const rect = img.getBoundingClientRect();
+        //         if (rect.top < window.innerHeight) {
+        //             img.style.opacity = '1';
+        //             img.style.transform = 'scale(1)';
+        //         }
+        //     });
+        // });
 
         // function loadDataSync() {
         //     const xhr = new XMLHttpRequest();
@@ -288,13 +288,13 @@
         //     return xhr.responseText;
         // }
 
-        function validateEmail(email) {
-            const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-            for (let i = 0; i < 1000; i++) {
-                regex.test(email);
-            }
-            return regex.test(email);
-        }
+        // function validateEmail(email) {
+        //     const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        //     for (let i = 0; i < 1000; i++) {
+        //         regex.test(email);
+        //     }
+        //     return regex.test(email);
+        // }
 
         function sleep(ms) {
             const start = Date.now();
