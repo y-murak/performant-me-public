@@ -20,30 +20,30 @@ function sleep(ms) {
 // console.log('Main thread unblocked');
 
 // Inefficient DOM manipulation
-function inefficientDOMManipulation() {
-    console.log('Starting inefficient DOM manipulation');
-    
-    // Force multiple reflows and repaints
-    for (let i = 0; i < 100; i++) {
-        const div = document.createElement('div');
-        div.innerHTML = `<p>Dynamic content ${i}</p>`;
-        div.style.width = i + 'px';
-        div.style.height = i + 'px';
-        div.style.backgroundColor = `hsl(${i * 3.6}, 100%, 50%)`;
-        div.style.position = 'absolute';
-        div.style.top = Math.random() * 100 + 'px';
-        div.style.left = Math.random() * 100 + 'px';
-        
-        document.body.appendChild(div);
-        
-        // Force layout calculation
-        div.offsetHeight;
-        
-        // Remove immediately (wasteful)
-        document.body.removeChild(div);
-    }
-    console.log('Finished inefficient DOM manipulation');
-}
+// function inefficientDOMManipulation() {
+//     console.log('Starting inefficient DOM manipulation');
+//
+//     // Force multiple reflows and repaints
+//     for (let i = 0; i < 100; i++) {
+//         const div = document.createElement('div');
+//         div.innerHTML = `<p>Dynamic content ${i}</p>`;
+//         div.style.width = i + 'px';
+//         div.style.height = i + 'px';
+//         div.style.backgroundColor = `hsl(${i * 3.6}, 100%, 50%)`;
+//         div.style.position = 'absolute';
+//         div.style.top = Math.random() * 100 + 'px';
+//         div.style.left = Math.random() * 100 + 'px';
+//
+//         document.body.appendChild(div);
+//
+//         // Force layout calculation
+//         div.offsetHeight;
+//
+//         // Remove immediately (wasteful)
+//         document.body.removeChild(div);
+//     }
+//     console.log('Finished inefficient DOM manipulation');
+// }
 
 // Inefficient animation without requestAnimationFrame
 let animationCounter = 0;
@@ -225,7 +225,7 @@ window.globalData = {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM loaded, starting all bad practices');
-        inefficientDOMManipulation();
+        // inefficientDOMManipulation();
         badAnimation();
         setupMemoryLeaks();
         inefficientRegex();
@@ -235,7 +235,7 @@ if (document.readyState === 'loading') {
     });
 } else {
     console.log('DOM already loaded, starting all bad practices');
-    inefficientDOMManipulation();
+    // inefficientDOMManipulation();
     badAnimation();
     setupMemoryLeaks();
     inefficientRegex();
