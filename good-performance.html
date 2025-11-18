@@ -245,31 +245,31 @@
         //     console.log('Debug message ' + i);
         // }
 
-        function inefficientHover(element) {
-            element.style.backgroundColor = 'red';
-            element.style.transform = 'scale(1.1)';
-            element.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+        // function inefficientHover(element) {
+        //     element.style.backgroundColor = 'red';
+        //     element.style.transform = 'scale(1.1)';
+        //     element.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+        //
+        //     document.querySelectorAll('*').forEach(el => {
+        //         el.style.transition = 'all 0.3s ease';
+        //     });
+        // }
+        //
+        // function inefficientHoverOut(element) {
+        //     element.style.backgroundColor = '';
+        //     element.style.transform = '';
+        //     element.style.boxShadow = '';
+        // }
 
-            document.querySelectorAll('*').forEach(el => {
-                el.style.transition = 'all 0.3s ease';
-            });
-        }
-
-        function inefficientHoverOut(element) {
-            element.style.backgroundColor = '';
-            element.style.transform = '';
-            element.style.boxShadow = '';
-        }
-
-        let animationInterval = setInterval(() => {
-            const box = document.getElementById('movingBox');
-            if (box) {
-                let currentLeft = parseInt(box.style.left || '0');
-                box.style.left = (currentLeft + 1) % 300 + 'px';
-
-                box.offsetHeight;
-            }
-        }, 16);
+        // let animationInterval = setInterval(() => {
+        //     const box = document.getElementById('movingBox');
+        //     if (box) {
+        //         let currentLeft = parseInt(box.style.left || '0');
+        //         box.style.left = (currentLeft + 1) % 300 + 'px';
+        //
+        //         box.offsetHeight;
+        //     }
+        // }, 16);
 
         document.addEventListener('scroll', function () {
             document.querySelectorAll('.gallery img').forEach(img => {

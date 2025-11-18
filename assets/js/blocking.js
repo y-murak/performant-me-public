@@ -20,30 +20,30 @@ function sleep(ms) {
 // console.log('Main thread unblocked');
 
 // Inefficient DOM manipulation
-function inefficientDOMManipulation() {
-    console.log('Starting inefficient DOM manipulation');
-    
-    // Force multiple reflows and repaints
-    for (let i = 0; i < 100; i++) {
-        const div = document.createElement('div');
-        div.innerHTML = `<p>Dynamic content ${i}</p>`;
-        div.style.width = i + 'px';
-        div.style.height = i + 'px';
-        div.style.backgroundColor = `hsl(${i * 3.6}, 100%, 50%)`;
-        div.style.position = 'absolute';
-        div.style.top = Math.random() * 100 + 'px';
-        div.style.left = Math.random() * 100 + 'px';
-        
-        document.body.appendChild(div);
-        
-        // Force layout calculation
-        div.offsetHeight;
-        
-        // Remove immediately (wasteful)
-        document.body.removeChild(div);
-    }
-    console.log('Finished inefficient DOM manipulation');
-}
+// function inefficientDOMManipulation() {
+//     console.log('Starting inefficient DOM manipulation');
+//
+//     // Force multiple reflows and repaints
+//     for (let i = 0; i < 100; i++) {
+//         const div = document.createElement('div');
+//         div.innerHTML = `<p>Dynamic content ${i}</p>`;
+//         div.style.width = i + 'px';
+//         div.style.height = i + 'px';
+//         div.style.backgroundColor = `hsl(${i * 3.6}, 100%, 50%)`;
+//         div.style.position = 'absolute';
+//         div.style.top = Math.random() * 100 + 'px';
+//         div.style.left = Math.random() * 100 + 'px';
+//
+//         document.body.appendChild(div);
+//
+//         // Force layout calculation
+//         div.offsetHeight;
+//
+//         // Remove immediately (wasteful)
+//         document.body.removeChild(div);
+//     }
+//     console.log('Finished inefficient DOM manipulation');
+// }
 
 // Inefficient animation without requestAnimationFrame
 let animationCounter = 0;
@@ -138,76 +138,76 @@ function inefficientRegex() {
 // }
 
 // Inefficient data processing
-function inefficientDataProcessing() {
-    console.log('Starting inefficient data processing');
-    
-    // Create large arrays and process them inefficiently
-    const largeArray = Array.from({length: 10000}, (_, i) => ({
-        id: i,
-        name: `Item ${i}`,
-        value: Math.random(),
-        data: Array.from({length: 100}, () => Math.random())
-    }));
-    
-    // Inefficient filtering and mapping
-    const result = largeArray
-        .filter(item => item.value > 0.1)
-        .map(item => ({...item, processed: true}))
-        .filter(item => item.id % 2 === 0)
-        .map(item => ({...item, doubled: item.value * 2}))
-        .filter(item => item.doubled > 0.5)
-        .map(item => item.name.toUpperCase());
-    
-    console.log('Processed items:', result.length);
-    
-    // Nested loops for O(n²) complexity
-    let comparisons = 0;
-    for (let i = 0; i < 1000; i++) {
-        for (let j = 0; j < 1000; j++) {
-            comparisons++;
-            if (i === j) {
-                // Do something
-            }
-        }
-    }
-    console.log('Comparisons made:', comparisons);
-}
+// function inefficientDataProcessing() {
+//     console.log('Starting inefficient data processing');
+//
+//     // Create large arrays and process them inefficiently
+//     const largeArray = Array.from({length: 10000}, (_, i) => ({
+//         id: i,
+//         name: `Item ${i}`,
+//         value: Math.random(),
+//         data: Array.from({length: 100}, () => Math.random())
+//     }));
+//
+//     // Inefficient filtering and mapping
+//     const result = largeArray
+//         .filter(item => item.value > 0.1)
+//         .map(item => ({...item, processed: true}))
+//         .filter(item => item.id % 2 === 0)
+//         .map(item => ({...item, doubled: item.value * 2}))
+//         .filter(item => item.doubled > 0.5)
+//         .map(item => item.name.toUpperCase());
+//
+//     console.log('Processed items:', result.length);
+//
+//     // Nested loops for O(n²) complexity
+//     let comparisons = 0;
+//     for (let i = 0; i < 1000; i++) {
+//         for (let j = 0; j < 1000; j++) {
+//             comparisons++;
+//             if (i === j) {
+//                 // Do something
+//             }
+//         }
+//     }
+//     console.log('Comparisons made:', comparisons);
+// }
 
 // Heavy calculations on main thread
-function heavyCalculations() {
-    console.log('Starting heavy calculations on main thread');
-    
-    // Calculate prime numbers inefficiently
-    function isPrime(n) {
-        if (n < 2) return false;
-        for (let i = 2; i < n; i++) {
-            if (n % i === 0) return false;
-        }
-        return true;
-    }
-    
-    const primes = [];
-    for (let i = 2; i < 10000; i++) {
-        if (isPrime(i)) {
-            primes.push(i);
-        }
-    }
-    
-    console.log('Found primes:', primes.length);
-    
-    // Fibonacci calculation with no memoization
-    function fibonacci(n) {
-        if (n <= 1) return n;
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-    
-    const fibResults = [];
-    for (let i = 0; i < 35; i++) {
-        fibResults.push(fibonacci(i));
-    }
-    
-    console.log('Fibonacci results:', fibResults.length);
-}
+// function heavyCalculations() {
+//     console.log('Starting heavy calculations on main thread');
+//
+//     // Calculate prime numbers inefficiently
+//     function isPrime(n) {
+//         if (n < 2) return false;
+//         for (let i = 2; i < n; i++) {
+//             if (n % i === 0) return false;
+//         }
+//         return true;
+//     }
+//
+//     const primes = [];
+//     for (let i = 2; i < 10000; i++) {
+//         if (isPrime(i)) {
+//             primes.push(i);
+//         }
+//     }
+//
+//     console.log('Found primes:', primes.length);
+//
+//     // Fibonacci calculation with no memoization
+//     function fibonacci(n) {
+//         if (n <= 1) return n;
+//         return fibonacci(n - 1) + fibonacci(n - 2);
+//     }
+//
+//     const fibResults = [];
+//     for (let i = 0; i < 35; i++) {
+//         fibResults.push(fibonacci(i));
+//     }
+//
+//     console.log('Fibonacci results:', fibResults.length);
+// }
 
 // Global variables creating memory pressure
 window.globalData = {
@@ -225,31 +225,31 @@ window.globalData = {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM loaded, starting all bad practices');
-        inefficientDOMManipulation();
+        // inefficientDOMManipulation();
         badAnimation();
         setupMemoryLeaks();
         inefficientRegex();
         // synchronousRequests();
-        inefficientDataProcessing();
-        heavyCalculations();
+        // inefficientDataProcessing();
+        // heavyCalculations();
     });
 } else {
     console.log('DOM already loaded, starting all bad practices');
-    inefficientDOMManipulation();
+    // inefficientDOMManipulation();
     badAnimation();
     setupMemoryLeaks();
     inefficientRegex();
     // synchronousRequests();
-    inefficientDataProcessing();
-    heavyCalculations();
+    // inefficientDataProcessing();
+    // heavyCalculations();
 }
 
 // More blocking operations
-console.log('Blocking script execution continues...');
-for (let i = 0; i < 1000000; i++) {
-    // Waste CPU cycles
-    Math.sqrt(i);
-}
+// console.log('Blocking script execution continues...');
+// for (let i = 0; i < 1000000; i++) {
+//     // Waste CPU cycles
+//     Math.sqrt(i);
+// }
 
 // Final sleep to ensure blocking
 // sleep(1000);
