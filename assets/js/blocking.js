@@ -15,9 +15,9 @@ for (let i = 0; i < 500; i++) {
 }
 
 // Block the main thread for 5 seconds
-console.log('Blocking main thread for 5 seconds...');
-sleep(5000);
-console.log('Main thread unblocked');
+// console.log('Blocking main thread for 5 seconds...');
+// sleep(5000);
+// console.log('Main thread unblocked');
 
 // Inefficient DOM manipulation
 function inefficientDOMManipulation() {
@@ -252,5 +252,5 @@ for (let i = 0; i < 1000000; i++) {
 }
 
 // Final sleep to ensure blocking
-sleep(1000);
+// sleep(1000);
 console.log('Blocking script finished');
