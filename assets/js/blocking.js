@@ -9,10 +9,10 @@ function sleep(ms) {
 }
 
 // Console spam
-console.log('Starting blocking script...');
-for (let i = 0; i < 500; i++) {
-    console.log(`Blocking script iteration: ${i}`);
-}
+// console.log('Starting blocking script...');
+// for (let i = 0; i < 500; i++) {
+//     console.log(`Blocking script iteration: ${i}`);
+// }
 
 // Block the main thread for 5 seconds
 // console.log('Blocking main thread for 5 seconds...');
