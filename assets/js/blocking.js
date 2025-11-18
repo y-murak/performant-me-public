@@ -115,27 +115,27 @@ function inefficientRegex() {
 }
 
 // Synchronous AJAX requests
-function synchronousRequests() {
-    console.log('Making synchronous requests');
-    
-    try {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', false); // false = synchronous
-        xhr.send();
-        console.log('Synchronous request completed:', xhr.status);
-    } catch (e) {
-        console.log('Synchronous request failed:', e.message);
-    }
-    
-    try {
-        const xhr2 = new XMLHttpRequest();
-        xhr2.open('GET', 'https://jsonplaceholder.typicode.com/posts/2', false);
-        xhr2.send();
-        console.log('Second synchronous request completed:', xhr2.status);
-    } catch (e) {
-        console.log('Second synchronous request failed:', e.message);
-    }
-}
+// function synchronousRequests() {
+//     console.log('Making synchronous requests');
+//
+//     try {
+//         const xhr = new XMLHttpRequest();
+//         xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', false); // false = synchronous
+//         xhr.send();
+//         console.log('Synchronous request completed:', xhr.status);
+//     } catch (e) {
+//         console.log('Synchronous request failed:', e.message);
+//     }
+//
+//     try {
+//         const xhr2 = new XMLHttpRequest();
+//         xhr2.open('GET', 'https://jsonplaceholder.typicode.com/posts/2', false);
+//         xhr2.send();
+//         console.log('Second synchronous request completed:', xhr2.status);
+//     } catch (e) {
+//         console.log('Second synchronous request failed:', e.message);
+//     }
+// }
 
 // Inefficient data processing
 function inefficientDataProcessing() {
@@ -229,7 +229,7 @@ if (document.readyState === 'loading') {
         badAnimation();
         setupMemoryLeaks();
         inefficientRegex();
-        synchronousRequests();
+        // synchronousRequests();
         inefficientDataProcessing();
         heavyCalculations();
     });
@@ -239,7 +239,7 @@ if (document.readyState === 'loading') {
     badAnimation();
     setupMemoryLeaks();
     inefficientRegex();
-    synchronousRequests();
+    // synchronousRequests();
     inefficientDataProcessing();
     heavyCalculations();
 }
