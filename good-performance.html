@@ -241,9 +241,9 @@
 
     <script>
         // Console spam
-        for (let i = 0; i < 1000; i++) {
-            console.log('Debug message ' + i);
-        }
+        // for (let i = 0; i < 1000; i++) {
+        //     console.log('Debug message ' + i);
+        // }
 
         function inefficientHover(element) {
             element.style.backgroundColor = 'red';
@@ -281,12 +281,12 @@
             });
         });
 
-        function loadDataSync() {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', false);
-            xhr.send();
-            return xhr.responseText;
-        }
+        // function loadDataSync() {
+        //     const xhr = new XMLHttpRequest();
+        //     xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', false);
+        //     xhr.send();
+        //     return xhr.responseText;
+        // }
 
         function validateEmail(email) {
             const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -301,7 +301,7 @@
             while (Date.now() - start < ms) { }
         }
 
-        sleep(2000);
+        // sleep(2000);
     </script>
 </body>
 
